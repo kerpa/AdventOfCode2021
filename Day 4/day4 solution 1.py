@@ -22,7 +22,7 @@ def is_marked(board):
 
     return False
 
-
+#marking the numbers in the board
 def update(board, val):
     for i in range(5):
         for a in range(5):
@@ -39,13 +39,14 @@ def sum_board(board):
                 s += int(board[i][a])
     return s
 
-
+#initializing the board
 numbers = lines[0].split(',')
 boards = []
 
 for i in range(2, len(lines), 6):
     boards.append([line.split() for line in lines[i:i + 5]])
 
+#doing the bingo
 for num in numbers:
     for i in range(len(boards)):
         boards[i] = update(boards[i], num)
